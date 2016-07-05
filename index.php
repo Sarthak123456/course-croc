@@ -1,3 +1,6 @@
+<?php
+include 'includes/dbconfig.php';
+?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
@@ -35,7 +38,58 @@
 
   <!-- Css3 Transitions Styles  -->
   <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+  <style>
+.tt-query,
+.tt-hint {
+    width: 396px;
+    height: 30px;
+    padding: 8px 12px;
+    font-size: 24px;
+    line-height: 30px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    outline: none;
+}
 
+.tt-query {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+    color: #999
+}
+
+.tt-dropdown-menu {
+    width: 422px;
+    margin-top: 12px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    color: #fff;
+    background-color: #0097cf;
+
+}
+</style>
   <!-- Color CSS Styles  -->
   <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red" media="screen" />
   <link rel="stylesheet" type="text/css" href="css/colors/jade.css" title="jade" media="screen" />
@@ -55,6 +109,7 @@
   <script type="text/javascript" src="js/jquery.migrate.js"></script>
   <script type="text/javascript" src="js/modernizrr.js"></script>
   <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+  <script src="//rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.js"></script>
   <script type="text/javascript" src="js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
@@ -68,7 +123,24 @@
   <script type="text/javascript" src="js/jquery.parallax.js"></script>
   <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
   <script type="text/javascript" src="js/jquery.slicknav.js"></script>
-  
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('#search_bar').typeahead({
+          source: function (query, process) {
+            $.ajax({
+              url: 'includes/autocomplete.php',
+              type: 'POST',
+              dataType: 'JSON',
+              data: 'query=' + query,
+              success: function(data) {
+                console.log(data);
+                process(data);
+              }
+            });
+          }
+        });
+      });
+    </script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -321,7 +393,7 @@
                               <span>Why you are waiting</span>
                             </h3>
                             <b><br><br>
-                            <input type="text" name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
+                            <input type="text"   name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
                <div class="">
                   <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Courses</a>
                   <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>
