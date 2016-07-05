@@ -6,7 +6,7 @@
 <head>
 
   <!-- Basic -->
-  <title>Margo | Home</title>
+  <title>CourseCroc</title>
 
   <!-- Define Charset -->
   <meta charset="utf-8">
