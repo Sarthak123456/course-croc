@@ -332,19 +332,46 @@
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
-                <div class="portfolio-thumb">
-                  <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
-                    <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                    <img alt="" src="images/portfolio-1/1.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Website</span>
-                    <span>Drawing</span>
-                  </a>
-                </div>
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
               </div>
             </div>
 
