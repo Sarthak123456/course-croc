@@ -105,11 +105,18 @@ include 'includes/dbconfig.php';
   <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.js"></script>
+
   <script type="text/javascript" src="js/jquery.migrate.js"></script>
   <script type="text/javascript" src="js/modernizrr.js"></script>
+<<<<<<< HEAD
   <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
   <script src="//rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.js"></script>
+=======
+
+>>>>>>> 0d7d322b92a0151c7c4b6182a63384fb2b5039b8
   <script type="text/javascript" src="js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
@@ -123,6 +130,7 @@ include 'includes/dbconfig.php';
   <script type="text/javascript" src="js/jquery.parallax.js"></script>
   <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
   <script type="text/javascript" src="js/jquery.slicknav.js"></script>
+<<<<<<< HEAD
   <script type="text/javascript">
       $(document).ready(function() {
         $('#search_bar').typeahead({
@@ -141,10 +149,29 @@ include 'includes/dbconfig.php';
         });
       });
     </script>
+=======
+>>>>>>> 0d7d322b92a0151c7c4b6182a63384fb2b5039b8
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('#search_bar').typeahead({
+          source: function (query, process) {
+            $.ajax({
+              url: 'includes/autocomplete.php',
+              type: 'POST',
+              dataType: 'JSON',
+              data: 'query=' + query,
+              success: function(data) {
+                console.log(data);
+                process(data);
+              }
+            });
+          }
+        });
+      });
+    </script>
 </head>
 
 <body>
@@ -393,19 +420,26 @@ include 'includes/dbconfig.php';
                               <span>Why you are waiting</span>
                             </h3>
                             <b><br><br>
+
                             <input type="text"   name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
                <div class="">
                   <a class="animated4 slider btn btn-system btn-large btn-min-block" href="search.php">Courses</a>
                   <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>
-                       <div class="btn-group" data-toggle="buttons">
-  
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off">Courses
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option3" autocomplete="off">Content
-  </label>
-</div>
+            ==
+                            <form action="course.php" method="GET">
+                            <input type="text" data-provide="typeahead" name="search_bar" id="search_bar" class="typeahead form-control se"   placeholder="Search" />
+                          
+                            <input type="radio" name="type" value="courses" onclick="javascript: submit()" autocomplete="off">Courses
+                        
+
+                            <input type="radio" name="type" id="content" onclick="javascript: submit()" autocomplete="off">Content
+                     
+
+                          </form>
+               <div class="">
+                  <!--<a class="animated4 slider btn btn-system btn-large btn-min-block" href="search.php">Courses</a>
+                  <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>-->
+
                   <br><br><br><br><br><br>
                   <a href="#mid" class="clearfix"><i class="fa big fa-angle-down"></i></a>
 
