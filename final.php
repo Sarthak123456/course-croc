@@ -6,7 +6,7 @@
 <head>
 
   <!-- Basic -->
-  <title>Margo | Latest Projects</title>
+  <title>Margo | Portfolio</title>
 
   <!-- Define Charset -->
   <meta charset="utf-8">
@@ -82,61 +82,7 @@
     <header class="clearfix">
 
       <!-- Start Top Bar -->
-      <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <!-- Start Contact Info -->
-              <ul class="contact-details">
-                <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a>
-                </li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a>
-                </li>
-                <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-                </li>
-              </ul>
-              <!-- End Contact Info -->
-            </div>
-            <div class="col-md-6">
-              <!-- Start Social Links -->
-              <ul class="social-list">
-                <li>
-                  <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <li>
-                  <a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-                </li>
-              </ul>
-              <!-- End Social Links -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Top Bar -->
+      
 
       <!-- Start Header ( Logo & Naviagtion ) -->
       <div class="navbar navbar-default navbar-top">
@@ -147,7 +93,7 @@
               <i class="fa fa-bars"></i>
             </button>
             <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html"><img alt="" src="images/margo.png"></a>
+            <a class="navbar-brand" href="index.php"><img alt="" src="images/margo.png"></a>
           </div>
           <div class="navbar-collapse collapse">
             <!-- Stat Search -->
@@ -186,25 +132,25 @@
                 </ul>
               </li>
               <li>
-                <a class="active" href="#">Shortcodes</a>
+                <a href="#">Shortcodes</a>
                 <ul class="dropdown">
                   <li><a href="tabs.html">Tabs</a></li>
                   <li><a href="buttons.html">Buttons</a></li>
                   <li><a href="action-box.html">Action Box</a></li>
                   <li><a href="testimonials.html">Testimonials</a></li>
                   <li><a href="latest-posts.html">Latest Posts</a></li>
-                  <li><a class="active" href="latest-projects.html">Latest Projects</a></li>
+                  <li><a href="latest-projects.html">Latest Projects</a></li>
                   <li><a href="pricing.html">Pricing Tables</a></li>
                   <li><a href="accordion-toggles.html">Accordion & Toggles</a></li>
                 </ul>
               </li>
               <li>
-                <a href="portfolio-3.html">Portfolio</a>
+                <a class="active" href="portfolio-3.html">Portfolio</a>
                 <ul class="dropdown">
                   <li><a href="portfolio-2.html">2 Columns</a></li>
                   <li><a href="portfolio-3.html">3 Columns</a></li>
                   <li><a href="portfolio-4.html">4 Columns</a></li>
-                  <li><a href="single-project.html">Single Project</a></li>
+                  <li><a class="active" href="single-project.html">Single Project</a></li>
                 </ul>
               </li>
               <li>
@@ -260,7 +206,7 @@
             </ul>
           </li>
           <li>
-            <a class="active" href="#">Shortcodes</a>
+            <a href="#">Shortcodes</a>
             <ul class="dropdown">
               <li><a href="tabs.html">Tabs</a>
               </li>
@@ -272,7 +218,7 @@
               </li>
               <li><a href="latest-posts.html">Latest Posts</a>
               </li>
-              <li><a class="active" href="latest-projects.html">Latest Projects</a>
+              <li><a href="latest-projects.html">Latest Projects</a>
               </li>
               <li><a href="pricing.html">Pricing Tables</a>
               </li>
@@ -281,7 +227,7 @@
             </ul>
           </li>
           <li>
-            <a href="portfolio-3.html">Portfolio</a>
+            <a class="active" href="portfolio-3.html">Portfolio</a>
             <ul class="dropdown">
               <li><a href="portfolio-2.html">2 Columns</a>
               </li>
@@ -289,7 +235,7 @@
               </li>
               <li><a href="portfolio-4.html">4 Columns</a>
               </li>
-              <li><a href="single-project.html">Single Project</a>
+              <li><a class="active" href="single-project.html">Single Project</a>
               </li>
             </ul>
           </li>
@@ -318,16 +264,18 @@
 
 
     <!-- Start Page Banner -->
-    <div class="page-banner no-subtitle">
+    <div class="page-banner">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Latest Projects</h2>
+            <h2>Lorem Ipsum</h2>
+            <p>Single Project Subtitle</p>
           </div>
           <div class="col-md-6">
             <ul class="breadcrumbs">
               <li><a href="#">Home</a></li>
-              <li>Latest Projects</li>
+              <li><a href="#">Portfolio</a></li>
+              <li>Lorem Ipsum</li>
             </ul>
           </div>
         </div>
@@ -339,425 +287,266 @@
     <!-- Start Content -->
     <div id="content">
       <div class="container">
-        <div class="page-content">
+        <div class="project-page row">
 
-
-          <!--Start Recent Projects-->
-          <div class="recent-projects">
-            <h4 class="title"><span>Latest Projects</span></h4>
-            <div class="projects-carousel touch-carousel">
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
-                      <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                      <img alt="" src="images/portfolio-01.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Website</span>
-                      <span>Drawing</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>5</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
+          <!-- Start Single Project Slider -->
+          <div class="project-media col-md-8">
+            
+              <div class="item">
+                <iframe src="http://www.youtube.com/embed/XGSy3_Czz8k">
+</iframe>
+      
               </div>
-              <!-- End Project Item -->
+            
+           
+          </div>
+          <!-- End Single Project Slider -->
 
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
-                      <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                      <img alt="" src="images/portfolio-02.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Logo</span>
-                      <span>Animation</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>2</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-03.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Drawing</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>8</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-04.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Website</span>
-                      <span>Ilustration</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>12</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-05.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Logo</span>
-                      <span>Drawing</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>5</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-06.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Animation</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>9</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-07.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Website</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>1</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-08.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Ilustration</span>
-                      <span>Animation</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>6</span></a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>6</span></a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>6</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
+          <!-- Start Project Content -->
+          <div class="project-content col-md-4">
+            <h4><span>Project Description</span></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed facilisis purus. Donec interdum massa at ipsum vehicula tristique. Maecenas bibendum dictum tincidunt. Sed nec justo ac libero consequat tincidunt. Cras eget molestie justo.</p>
+            <h4><span>Project Details</span></h4>
+            <ul>
+              <li><strong>Client:</strong> iThemesLab</li>
+              <li><strong>Status:</strong> Finish on 30 Dec, 2013</li>
+              <li><strong>Skills:</strong> creative, web design</li>
+            </ul>
+            <div class="post-share">
+              <span>Share This:</span>
+              <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+              <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
             </div>
           </div>
-          <!--End Recent Projects-->
-
-          <!-- Divider -->
-          <div class="hr5" style="margin-top:45px; margin-bottom:35px;"></div>
-
-          <!--Start Recent Projects-->
-          <div class="recent-projects">
-            <div class="projects-carousel touch-carousel navigation-3">
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
-                      <div class="thumb-overlay"><i class="fa fa-play"></i></div>
-                      <img alt="" src="images/portfolio-01.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Website</span>
-                      <span>Drawing</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>5</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-02.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Logo</span>
-                      <span>Animation</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>2</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-03.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Drawing</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>8</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-04.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Website</span>
-                      <span>Ilustration</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>12</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-05.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Logo</span>
-                      <span>Drawing</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>5</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-06.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Animation</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>9</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-07.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Website</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>1</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-              <!-- Start Project Item -->
-              <div class="portfolio-item item">
-                <div class="portfolio-border">
-                  <!-- Start Project Thumb -->
-                  <div class="portfolio-thumb">
-                    <a href="#">
-                      <div class="thumb-overlay"><i class="fa fa-link"></i></div>
-                      <img alt="" src="images/portfolio-08.jpg" />
-                    </a>
-                  </div>
-                  <!-- End Project Thumb -->
-                  <!-- Start Project Details -->
-                  <div class="portfolio-details">
-                    <a href="#">
-                      <h4>Lorem Ipsum Dolor</h4>
-                      <span>Ilustration</span>
-                      <span>Animation</span>
-                    </a>
-                    <a href="#" class="like-link"><i class="fa fa-heart"></i><span>6</span></a>
-                  </div>
-                  <!-- End Project Details -->
-                </div>
-              </div>
-              <!-- End Project Item -->
-
-            </div>
-          </div>
-          <!--End Recent Projects-->
-
+          <!-- End Project Content -->
 
         </div>
+
+        <!-- Start Recent Projects Carousel -->
+        <div class="recent-projects">
+          <h4 class="title"><span>Recent Projects</span></h4>
+          <div class="projects-carousel touch-carousel">
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a class="lightbox" data-lightbox-type="ajax" href="https://vimeo.com/78468485">
+                    <div class="thumb-overlay"><i class="fa fa-play"></i></div>
+                    <img alt="" src="images/portfolio-1/1.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Website</span>
+                    <span>Drawing</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-01.jpg">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/2.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Logo</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/3.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Drawing</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/4.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Website</span>
+                    <span>Ilustration</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/5.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Logo</span>
+                    <span>Drawing</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/6.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/7.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Website</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/8.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/9.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/10.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/11.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/12.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- End Recent Projects Carousel -->
+
       </div>
     </div>
     <!-- End Content -->
