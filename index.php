@@ -141,7 +141,12 @@ include 'includes/dbconfig.php';
         });
       });
     </script>
+<script type="text/javascript">
+  $('input[name=type]').change(function(){
+     $('form').submit();
 
+});
+</script>
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -393,14 +398,17 @@ include 'includes/dbconfig.php';
                               <span>Why you are waiting</span>
                             </h3>
                             <b><br><br>
+                            <form id="form" action="course.php" method="GET">
                             <input type="text"   name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
                <div class="">
-                  <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Courses</a>
-                  <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>
+               <input type="radio" class="animated4 slider btn btn-system btn-large btn-min-block" name="type"  onclick="javascript: submit()" value="courses">Courses
+               <input type="radio" class="animated4 slider btn btn-system btn-large btn-min-block"name="type"  onclick="javascript: submit()" value="content">Content
+                  
                   <br><br><br><br><br><br>
                   <a href="#mid" class="clearfix"><i class="fa big fa-angle-down"></i></a>
 
                 </div>
+                </form>
               </div>
             </div>
           </div>
