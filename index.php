@@ -104,11 +104,21 @@ include 'includes/dbconfig.php';
   <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />
 
   <!-- Margo JS  -->
-  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.js"></script>
+
   <script type="text/javascript" src="js/jquery.migrate.js"></script>
   <script type="text/javascript" src="js/modernizrr.js"></script>
+<<<<<<< HEAD
   <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
   <script src="//rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.js"></script>
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> 0d7d322b92a0151c7c4b6182a63384fb2b5039b8
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
   <script type="text/javascript" src="js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
@@ -122,6 +132,10 @@ include 'includes/dbconfig.php';
   <script type="text/javascript" src="js/jquery.parallax.js"></script>
   <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
   <script type="text/javascript" src="js/jquery.slicknav.js"></script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
   <script type="text/javascript">
       $(document).ready(function() {
         $('#search_bar').typeahead({
@@ -140,10 +154,32 @@ include 'includes/dbconfig.php';
         });
       });
     </script>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 0d7d322b92a0151c7c4b6182a63384fb2b5039b8
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('#search_bar').typeahead({
+          source: function (query, process) {
+            $.ajax({
+              url: 'includes/autocomplete.php',
+              type: 'POST',
+              dataType: 'JSON',
+              data: 'query=' + query,
+              success: function(data) {
+                console.log(data);
+                process(data);
+              }
+            });
+          }
+        });
+      });
+    </script>
 </head>
 
 <body>
@@ -190,10 +226,15 @@ include 'includes/dbconfig.php';
                               <span>Why you are waiting</span>
                             </h3>
                             <b><br><br>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
                             <input type="text"   name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
                <div class="">
                   <a class="animated4 slider btn btn-system btn-large btn-min-block" href="search.php">Courses</a>
                   <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>
+<<<<<<< HEAD
                        <div class="btn-group" data-toggle="buttons">
   
   <label class="btn btn-primary">
@@ -203,6 +244,23 @@ include 'includes/dbconfig.php';
     <input type="radio" name="options" id="option3" autocomplete="off">Content
   </label>
 </div>
+=======
+            ==
+                            <form action="course.php" method="GET">
+                            <input type="text" data-provide="typeahead" name="search_bar" id="search_bar" class="typeahead form-control se"   placeholder="Search" />
+                          
+                            <input type="radio" name="type" value="courses" onclick="javascript: submit()" autocomplete="off">Courses
+                        
+
+                            <input type="radio" name="type" id="content" onclick="javascript: submit()" autocomplete="off">Content
+                     
+
+                          </form>
+               <div class="">
+                  <!--<a class="animated4 slider btn btn-system btn-large btn-min-block" href="search.php">Courses</a>
+                  <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>-->
+
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
                   <br><br><br><br><br><br>
                   <a href="#mid" class="clearfix"><i class="fa big fa-angle-down"></i></a>
 
@@ -232,7 +290,7 @@ include 'includes/dbconfig.php';
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
-               <form method="GET">
+                   <form method="GET">
                            
       <div class="col-md-3 photo-grid " style="float:left">
               
@@ -367,13 +425,21 @@ include 'includes/dbconfig.php';
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
+<<<<<<< HEAD
                <form method="GET">
+=======
+                <form method="GET">
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
                            
       <div class="col-md-3 photo-grid " style="float:left">
               
             <div class="panda">
              <figure>
+<<<<<<< HEAD
        <img class="img" alt="PDF" src="images/portfolio-1/1.png">
+=======
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
        <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
       </figure>
            <a href="final.php" target="_blank">
@@ -407,6 +473,7 @@ include 'includes/dbconfig.php';
     
     </div>
      </form>
+<<<<<<< HEAD
               </div>
             </div>
 
@@ -442,11 +509,14 @@ include 'includes/dbconfig.php';
                     <span>Animation</span>
                   </a>
                 </div>
+=======
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
               </div>
             </div>
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
+<<<<<<< HEAD
                 <div class="portfolio-thumb">
                   <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
@@ -477,11 +547,54 @@ include 'includes/dbconfig.php';
                     <span>Animation</span>
                   </a>
                 </div>
+=======
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
               </div>
             </div>
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
+<<<<<<< HEAD
                 <div class="portfolio-thumb">
                   <a href="#">
                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
@@ -531,6 +644,48 @@ include 'includes/dbconfig.php';
                     <span>Animation</span>
                   </a>
                 </div>
+=======
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/portfolio-1/1.png">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+>>>>>>> 908c0d5d5d987b1043189eb1082027bbd56b03e7
               </div>
             </div>
 
