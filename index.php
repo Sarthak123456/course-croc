@@ -1,3 +1,6 @@
+<?php
+include 'includes/dbconfig.php';
+?>
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
@@ -15,8 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Page Description and Author -->
-  <meta name="description" content="Margo - Responsive HTML5 Template">
-  <meta name="author" content="iThemesLab">
+ 
 
   <!-- Bootstrap CSS  -->
   <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
@@ -25,7 +27,7 @@
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
 
   <!-- Slicknav -->
-  <link rel="stylesheet" type="text/css" href="css/slicknav.css" media="screen">
+
 
   <!-- Margo CSS Styles  -->
   <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
@@ -35,7 +37,58 @@
 
   <!-- Css3 Transitions Styles  -->
   <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+  <style>
+.tt-query,
+.tt-hint {
+    width: 396px;
+    height: 30px;
+    padding: 8px 12px;
+    font-size: 24px;
+    line-height: 30px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    outline: none;
+}
 
+.tt-query {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+    color: #999
+}
+
+.tt-dropdown-menu {
+    width: 422px;
+    margin-top: 12px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    color: #fff;
+    background-color: #0097cf;
+
+}
+</style>
   <!-- Color CSS Styles  -->
   <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red" media="screen" />
   <link rel="stylesheet" type="text/css" href="css/colors/jade.css" title="jade" media="screen" />
@@ -55,6 +108,7 @@
   <script type="text/javascript" src="js/jquery.migrate.js"></script>
   <script type="text/javascript" src="js/modernizrr.js"></script>
   <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+  <script src="//rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.js"></script>
   <script type="text/javascript" src="js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
@@ -68,7 +122,24 @@
   <script type="text/javascript" src="js/jquery.parallax.js"></script>
   <script type="text/javascript" src="js/mediaelement-and-player.js"></script>
   <script type="text/javascript" src="js/jquery.slicknav.js"></script>
-  
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('#search_bar').typeahead({
+          source: function (query, process) {
+            $.ajax({
+              url: 'includes/autocomplete.php',
+              type: 'POST',
+              dataType: 'JSON',
+              data: 'query=' + query,
+              success: function(data) {
+                console.log(data);
+                process(data);
+              }
+            });
+          }
+        });
+      });
+    </script>
 
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -86,212 +157,10 @@
    
 
       <!-- Start  Logo & Naviagtion  -->
-      <div class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-          <div class="navbar-header">
-            <!-- Stat Toggle Nav Link For Mobiles -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <i class="fa fa-bars"></i>
-            </button>
-            <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="index.html">
-              <img alt="" src="images/margo.png">
-            </a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a href="#container" ><i class="fa fa-angle-up big"></i></a>
-              
-            </div>
-            <!-- End Search -->
-            <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a class="active" href="index.html">Home</a>
-                <ul class="dropdown">
-                  <li><a class="active" href="index.html">Home Main Version</a>
-                  </li>
-                  <li><a href="index-01.html">Home Version 1</a>
-                  </li>
-                  <li><a href="index-02.html">Home Version 2</a>
-                  </li>
-                  <li><a href="index-03.html">Home Version 3</a>
-                  </li>
-                  <li><a href="index-04.html">Home Version 4</a>
-                  </li>
-                  <li><a href="index-05.html">Home Version 5</a>
-                  </li>
-                  <li><a href="index-06.html">Home Version 6</a>
-                  </li>
-                  <li><a href="index-07.html">Home Version 7</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="about.html">Pages</a>
-                <ul class="dropdown">
-                  <li><a href="about.html">About</a>
-                  </li>
-                  <li><a href="services.html">Services</a>
-                  </li>
-                  <li><a href="right-sidebar.html">Right Sidebar</a>
-                  </li>
-                  <li><a href="left-sidebar.html">Left Sidebar</a>
-                  </li>
-                  <li><a href="404.html">404 Page</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Shortcodes</a>
-                <ul class="dropdown">
-                  <li><a href="tabs.html">Tabs</a>
-                  </li>
-                  <li><a href="buttons.html">Buttons</a>
-                  </li>
-                  <li><a href="action-box.html">Action Box</a>
-                  </li>
-                  <li><a href="testimonials.html">Testimonials</a>
-                  </li>
-                  <li><a href="latest-posts.html">Latest Posts</a>
-                  </li>
-                  <li><a href="latest-projects.html">Latest Projects</a>
-                  </li>
-                  <li><a href="pricing.html">Pricing Tables</a>
-                  </li>
-                  <li><a href="animated-graphs.html">Animated Graphs</a>
-                  </li>
-                  <li><a href="accordion-toggles.html">Accordion & Toggles</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="portfolio-3.html">Portfolio</a>
-                <ul class="dropdown">
-                  <li><a href="portfolio-2.html">2 Columns</a>
-                  </li>
-                  <li><a href="portfolio-3.html">3 Columns</a>
-                  </li>
-                  <li><a href="portfolio-4.html">4 Columns</a>
-                  </li>
-                  <li><a href="single-project.html">Single Project</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="blog.html">Blog</a>
-                <ul class="dropdown">
-                  <li><a href="blog.html">Blog - right Sidebar</a>
-                  </li>
-                  <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a>
-                  </li>
-                  <li><a href="single-post.html">Blog Single Post</a>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="contact.html">Contact</a>
-              </li>
-            </ul>
-            <!-- End Navigation List -->
-          </div>
-        </div>
+      <?php 
 
-        <!-- Mobile Menu Start -->
-        <ul class="wpb-mobile-menu">
-          <li>
-            <a class="active" href="index.html">Home</a>
-            <ul class="dropdown">
-              <li><a class="active" href="index.html">Home Main Version</a>
-              </li>
-              <li><a href="index-01.html">Home Version 1</a>
-              </li>
-              <li><a href="index-02.html">Home Version 2</a>
-              </li>
-              <li><a href="index-03.html">Home Version 3</a>
-              </li>
-              <li><a href="index-04.html">Home Version 4</a>
-              </li>
-              <li><a href="index-05.html">Home Version 5</a>
-              </li>
-              <li><a href="index-06.html">Home Version 6</a>
-              </li>
-              <li><a href="index-07.html">Home Version 7</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="about.html">Pages</a>
-            <ul class="dropdown">
-              <li><a href="about.html">About</a>
-              </li>
-              <li><a href="services.html">Services</a>
-              </li>
-              <li><a href="right-sidebar.html">Right Sidebar</a>
-              </li>
-              <li><a href="left-sidebar.html">Left Sidebar</a>
-              </li>
-              <li><a href="404.html">404 Page</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Shortcodes</a>
-            <ul class="dropdown">
-              <li><a href="tabs.html">Tabs</a>
-              </li>
-              <li><a href="buttons.html">Buttons</a>
-              </li>
-              <li><a href="action-box.html">Action Box</a>
-              </li>
-              <li><a href="testimonials.html">Testimonials</a>
-              </li>
-              <li><a href="latest-posts.html">Latest Posts</a>
-              </li>
-              <li><a href="latest-projects.html">Latest Projects</a>
-              </li>
-              <li><a href="pricing.html">Pricing Tables</a>
-              </li>
-              <li><a href="animated-graphs.html">Animated Graphs</a>
-              </li>
-              <li><a href="accordion-toggles.html">Accordion & Toggles</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="portfolio-3.html">Portfolio</a>
-            <ul class="dropdown">
-              <li><a href="portfolio-2.html">2 Columns</a>
-              </li>
-              <li><a href="portfolio-3.html">3 Columns</a>
-              </li>
-              <li><a href="portfolio-4.html">4 Columns</a>
-              </li>
-              <li><a href="single-project.html">Single Project</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="blog.html">Blog</a>
-            <ul class="dropdown">
-              <li><a href="blog.html">Blog - right Sidebar</a>
-              </li>
-              <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a>
-              </li>
-              <li><a href="single-post.html">Blog Single Post</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-        </ul>
-        <!-- Mobile Menu End -->
-
-      </div>
-      <!-- End Header Logo & Naviagtion -->
-
-    </header>
+      include "header.php";
+      ?>
     <!-- End Header Section -->
 
 
@@ -310,8 +179,8 @@
           <!--/ Carousel item end -->
          
           <!--/ Carousel item end -->
-          <div class="item active">
-            <img class="img-responsive" src="images/slider/2.jpg" alt="slider">
+          <div class="paa">
+           
             <div class="slider-content">
               <div class="col-md-12 text-center">
                 <h2 class="animated7 white">
@@ -321,16 +190,15 @@
                               <span>Why you are waiting</span>
                             </h3>
                             <b><br><br>
-                            <input type="text" name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
+                            <input type="text"   name="search_bar" id="search_bar" class="form-control se"   placeholder="Search" />
                <div class="">
                   <a class="animated4 slider btn btn-system btn-large btn-min-block" href="search.php">Courses</a>
                   <a class="animated4 slider btn btn-default btn-min-block" href="#">Content</a>
-                  <div class="btn-group" data-toggle="buttons">
+                       <div class="btn-group" data-toggle="buttons">
   
   <label class="btn btn-primary">
     <input type="radio" name="options" id="option2" autocomplete="off">Courses
   </label>
-
   <label class="btn btn-primary">
     <input type="radio" name="options" id="option3" autocomplete="off">Content
   </label>
@@ -352,15 +220,105 @@
     <!-- End Home Page Slider -->
  <div id="content">
       <div class="container">
-        <div class="row sidebar-page">
+        <div class="row">
 
           <!-- Page Content -->
-          <div class="col-md-9 page-content">
+          <div class="col-md-9">
 
             <!-- Start Recent Posts Carousel -->
              <div class="recent-projects" id="mid">
           <h4 class="title"><span>Related Courses</span></h4>
           <div class="projects-carousel touch-carousel">
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <a href="search.php" class="btn btn-primary">View full course ></a>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <a href="search.php" class="btn btn-primary">View full course ></a>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+              </div>
+            </div>
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
@@ -408,37 +366,62 @@
             </div>
 
             <div class="portfolio-item item">
+              <div class="portfolio-border">
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
               
-                <div class="portfolio-thumb">
-                  <a class="lightbox" title="Rating" href="images/portfolio-big-01.jpg">
-                    <div class="thumb-overlay"><i class="fa "><div class="star-ratings-css">
-  <div class="star-ratings-css-top" style="width: 54%"><span>★</span><span>★</span><span>★</span><span>★</span><span></span></div>
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/portfolio-1/1.png">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
  
-</div></i></div>
-                    <img alt="" src="images/portfolio-1/2.png" />
-                  </a>
-                </div>
-                <div class="portfolio-details">
-                  <a href="#">
-                    <h4>Lorem Ipsum Dolor</h4>
-                    <span>Logo</span>
-                    <span>Animation</span>
-                  </a>
-                </div>
+    
+    </div>
+     </form>
               </div>
             </div>
 
             <div class="portfolio-item item">
               <div class="portfolio-border">
                 <div class="portfolio-thumb">
-                  <a href="#">
+                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-02.jpg">
                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/3.png" />
+                    <img alt="" src="images/portfolio-1/5.png" />
                   </a>
                 </div>
                 <div class="portfolio-details">
                   <a href="#">
                     <h4>Lorem Ipsum Dolor</h4>
+                    <span>Logo</span>
                     <span>Drawing</span>
                   </a>
                 </div>
@@ -450,16 +433,322 @@
                 <div class="portfolio-thumb">
                   <a href="#">
                     <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
-                    <img alt="" src="images/portfolio-1/4.png" />
+                    <img alt="" src="images/portfolio-1/6.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a class="lightbox" title="This is an image title" href="images/portfolio-big-03.jpg">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/7.png" />
                   </a>
                 </div>
                 <div class="portfolio-details">
                   <a href="#">
                     <h4>Lorem Ipsum Dolor</h4>
                     <span>Website</span>
-                    <span>Ilustration</span>
                   </a>
                 </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/8.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/9.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/10.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/11.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <div class="portfolio-thumb">
+                  <a href="#">
+                    <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                    <img alt="" src="images/portfolio-1/12.png" />
+                  </a>
+                </div>
+                <div class="portfolio-details">
+                  <a href="#">
+                    <h4>Lorem Ipsum Dolor</h4>
+                    <span>Ilustration</span>
+                    <span>Animation</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+            </div>
+            </div>
+            </div>
+            </div>
+            <div id="content">
+      <div class="container">
+        <div class="row">
+
+          <!-- Page Content -->
+          <div class="col-md-9">
+
+            <!-- Start Recent Posts Carousel -->
+             <div class="recent-projects" id="mid">
+          <h4 class="title"><span>Related Content</span></h4>
+          <div class="projects-carousel touch-carousel">
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                   <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+                <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <a href="search.php" class="btn btn-primary">View full course ></a>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/blog-04.jpg">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
+              </div>
+            </div>
+
+            <div class="portfolio-item item">
+              <div class="portfolio-border">
+               <form method="GET">
+                           
+      <div class="col-md-3 photo-grid " style="float:left">
+              
+            <div class="panda">
+             <figure>
+       <img class="img" alt="PDF" src="images/portfolio-1/1.png">
+       <figcaption id="hide"> <span class="rating-static rating-30"></span></figcaption>    
+      </figure>
+           <a href="final.php" target="_blank">
+            <h4>This is a sample title</h4>
+           </a>
+         <br>
+         <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-university pull-left" aria-hidden="true"> University/website</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-usd  pull-left" aria-hidden="true"> Money</i></li>
+         <hr>         
+         </ul>
+          <ul style="list-style: none;align:center" class="container-fluid">
+         
+         
+         <li class="col-md-12"><i class="fa fa-calendar  pull-left" aria-hidden="true"> Date</i></li>
+         <hr>         
+         </ul>
+         <label class="checkbox-inline"><input type="checkbox" value="">Add to compare</label>
+
+         </div>
+         
+    
+ 
+    
+    </div>
+     </form>
               </div>
             </div>
 
@@ -631,11 +920,10 @@
           <!-- Start Animations Text -->
           <h1 class="fittext wite-text uppercase tlt">
                       <span class="texts">
-                        <span>Modern</span>
-                        <span>Clean</span>
-                        <span>Awesome</span>
-                        <span>Cool</span>
-                        <span>Great</span>
+                        
+                        <span>lol</span>
+                         <span>Greacked upt</span>
+                          <span>Saxy</span>
                       </span>
                         Margo Template is Ready for <br/>Business, Agency <strong>or</strong> Creative Portfolios
                     </h1>
@@ -662,187 +950,8 @@
     <!-- Start Client/Partner Section -->
     
     <!-- Start Footer Section -->
-    <footer>
-      <div class="container">
-        <div class="row footer-widgets">
-
-
-          <!-- Start Subscribe & Social Links Widget -->
-          <div class="col-md-3 col-xs-12">
-            <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe">
-                <input type="text" placeholder="mail@example.com">
-                <input type="submit" class="btn-system" value="Send">
-              </form>
-            </div>
-            <div class="footer-widget social-widget">
-              <h4>Follow Us<span class="head-line"></span></h4>
-              <ul class="social-icons">
-                <li>
-                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
-                <li>
-                  <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                </li>
-                <li>
-                  <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                </li>
-                <li>
-                  <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-                <li>
-                  <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                </li>
-                <li>
-                  <a class="skype" href="#"><i class="fa fa-skype"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Subscribe & Social Links Widget -->
-
-
-          <!-- Start Twitter Widget -->
-          <div class="col-md-3 col-xs-12">
-            <div class="footer-widget twitter-widget">
-              <h4>Twitter Feed<span class="head-line"></span></h4>
-              <ul>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2014</span>
-                </li>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-                  <span>26 February 2014</span>
-                </li>
-                <li>
-                  <p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                  <span>28 February 2014</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Twitter Widget -->
-
-
-          <!-- Start Flickr Widget -->
-          <div class="col-md-3 col-xs-12">
-            <div class="footer-widget flickr-widget">
-              <h4>Flicker Feed<span class="head-line"></span></h4>
-              <ul class="flickr-list">
-                <li>
-                  <a href="images/flickr-01.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-01.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-02.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-02.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-03.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-03.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-04.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-04.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-05.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-05.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-06.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-06.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-07.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-07.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-08.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-08.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-09.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-09.jpg">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Flickr Widget -->
-
-
-          <!-- Start Contact Widget -->
-          <div class="col-md-3 col-xs-12">
-            <div class="footer-widget contact-widget">
-              <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-              <ul>
-                <li><span>Phone Number:</span> +01 234 567 890</li>
-                <li><span>Email:</span> company@company.com</li>
-                <li><span>Website:</span> www.yourdomain.com</li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Contact Widget -->
-
-
-        </div>
-        <!-- .row -->
-
-        <!-- Start Copyright -->
-        <div class="copyright-section">
-          <div class="row">
-            <div class="col-md-6">
-              <p>&copy; 2014 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
-            </div>
-            <!-- .col-md-6 -->
-            <div class="col-md-6">
-              <ul class="footer-nav">
-                <li><a href="#">Sitemap</a>
-                </li>
-                <li><a href="#">Privacy Policy</a>
-                </li>
-                <li><a href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
-            <!-- .col-md-6 -->
-          </div>
-          <!-- .row -->
-        </div>
-        <!-- End Copyright -->
-
-      </div>
-    </footer>
-    <!-- End Footer Section -->
+   <?php include"footer.php"
+   ?>
 
 
   </div>

@@ -35,8 +35,8 @@
 
 .img{ 
 
-     height: 220px;
-    width: 172px;
+     height: auto;
+    width: auto;
    padding: auto;
     margin: auto;
 }
@@ -5976,9 +5976,14 @@ ul.footer-nav li a:hover {
 
 
 .purchase {
-    background: url(../images/parallax/bg-01.jpg) no-repeat;
+    background: url(../images/testimonials-bg.jpg) no-repeat;
     background-attachment: fixed;
-    padding: 100px 0;
+    padding: 100px;
+}
+.paa{
+	background: url(../images/portfolio-big-03.jpg) repeat-x;
+    background-attachment: fixed;
+    padding: 550px;
 }
 
 .collapse {
